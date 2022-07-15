@@ -2,16 +2,16 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
     <th:block th:replace="fragments :: risorse-head"></th:block>
-    
+    <title>University Departments</title>
     
   </head>
   <body >
-    <div th:replace="fragments :: navbar('index')"></div>
+    <div th:replace="fragments :: navbar('department')"></div>
     <div class="container text-center w-75 mt-3">
       <h1>Dipartimenti</h1>
       <hr/>
       <div th:if="${#lists.isEmpty(deptList)}">
-        <h1>Spiacenti, non è disponibile una lista di dipartimenti</h1>>
+        <h1>Nessun dipartimento trovato</h1>>
       </div>
       <div th:unless="${#lists.isEmpty(deptList)}">
         <table class="table mb-5">
