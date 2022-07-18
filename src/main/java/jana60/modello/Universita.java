@@ -14,7 +14,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "departments")
-public class Università
+public class Universita
 {
 
 	@Id

@@ -27,13 +27,13 @@ public class Degree {
 		this.level = level;
 	}
 
-	public void setUniversità(Università università) {
-		this.università = università;
+	public void setUniversità(Universita universita) {
+		this.universita = universita;
 	}
 
 	@ManyToOne
 	  @JoinColumn(name = "department_id")
-	  private Università università;
+	  private Universita universita;
 
 	public Integer getId() {
 		return id;
@@ -75,16 +75,16 @@ public class Degree {
 		this.website = website;
 	}
 	
-	  public Università getUniversità() {
-		return università;
+	  public Universita getUniversità() {
+		return universita;
 	}
 
-	public void setUniverstià(Università università) {
-		this.università = università;
+	public void setUniverstià(Universita universita) {
+		this.universita = universita;
 	}
 
 	public String getUniversitàName()
 	{
-		return università.getName();
+		return this.universita.getName();
 	}
 }

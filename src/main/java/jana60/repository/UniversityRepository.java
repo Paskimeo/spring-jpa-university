@@ -5,10 +5,10 @@ import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import jana60.modello.Università;
+import jana60.modello.Universita;
 
 @Repository
-public interface UniversityRepository extends CrudRepository <Università, Integer> {
+public interface UniversityRepository extends CrudRepository <Universita, Integer> {
 
 	
 

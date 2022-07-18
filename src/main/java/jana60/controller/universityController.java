@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import jana60.modello.Università;
+import jana60.modello.Universita;
 import jana60.repository.UniversityRepository;
 
 
@@ -28,7 +28,7 @@ public class universityController {
 	@GetMapping("/department")
 	public String department(Model model)
 	{
-		List<Università> deptList = (List<Università>) repo.findAll();
+		List<Universita> deptList = (List<Universita>) repo.findAll();
 		model.addAttribute("deptList", deptList);
 		return "department";
 	}

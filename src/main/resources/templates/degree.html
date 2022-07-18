@@ -18,6 +18,7 @@
           <thead>
             <tr>
               <th>Nome</th>
+              <th>Dipartimento</th>
               <th>Livello</th>
               <th>Indirizzo</th>
               <th>Indirizzo mail</th>
@@ -27,6 +28,7 @@
           <tbody>
             <tr th:each="c : ${degList}">
               <td th:text="${c.name}"></td>
+              <td th:text="${c.getUniversita.getName()}"></td>  
               <td th:text="${c.level}"></td>
               <td th:text="${c.address}"></td>
               <td th:text="${c.email}"></td>
