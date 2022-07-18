@@ -13,7 +13,7 @@ import jana60.repository.DegreeRepository;
 
 
 @Controller
-@RequestMapping("/degrees")
+@RequestMapping("/degree")
 public class DegreeController {
 	
 	@Autowired
@@ -25,7 +25,7 @@ public class DegreeController {
 	{
 		List<Degree> degList = (List<Degree>) repo.findAll();
 		model.addAttribute("degList", degList);
-		return "degrees";
+		return "degree";
 	}
 
-}
+} 

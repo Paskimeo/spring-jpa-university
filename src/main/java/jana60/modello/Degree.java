@@ -16,12 +16,23 @@ public class Degree {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	private String name, address, email, website;
+	private String name, level, address, email, website;
 	
 
+	public String getLevel() {
+		return level;
+	}
+
+	public void setLevel(String level) {
+		this.level = level;
+	}
+
+	public void setUniversità(Università università) {
+		this.università = università;
+	}
 
 	@ManyToOne
-	  @JoinColumn(name = "università_id")
+	  @JoinColumn(name = "department_id")
 	  private Università università;
 
 	public Integer getId() {

@@ -32,4 +32,7 @@ public class universityController {
 		model.addAttribute("deptList", deptList);
 		return "department";
 	}
+	
+	
+	
 }

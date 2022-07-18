@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <th:block th:replace="fragments :: risorse-head"></th:block>
+    <title>University Degrees</title>
+    
+  </head>
+  <body >
+    <div th:replace="fragments :: navbar('degree')"></div>
+    <div class="container text-center w-75 mt-3">
+      <h1>Degree</h1>
+      <hr/>
+      <div th:if="${#lists.isEmpty(degList)}">
+        <h1>Nessun dipartimento trovato</h1>>
+      </div>
+      <div th:unless="${#lists.isEmpty(degList)}">
+        <table class="table mb-5">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Livello</th>
+              <th>Indirizzo</th>
+              <th>Indirizzo mail</th>
+              <th>Sito web</th>    
+            </tr>
+          </thead>
+          <tbody>
+            <tr th:each="c : ${degList}">
+              <td th:text="${c.name}"></td>
+              <td th:text="${c.level}"></td>
+              <td th:text="${c.address}"></td>
+              <td th:text="${c.email}"></td>
+              <td th:text="${c.website}"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </body>
+</html>
