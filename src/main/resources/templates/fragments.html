@@ -26,6 +26,9 @@
                          <li class="nav-item">
                             <a class="nav-link" th:classAppend= "${current == 'degree'} ? active : not-active" href="/degree">degree</a>
                         </li>
+                        <li class="nav-item">
+	                <a class="nav-link" th:classAppend="${current == 'teacher'} ? active : not-active" href="/teacher">teacher</a>
+	              </li>
                     </ul>
                 </div>
             </nav>
