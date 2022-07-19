@@ -31,25 +31,22 @@ public class Teacher
 	
 	private String officeNumber;
 	
-	
-	@ManyToMany
-	@JoinTable
-	(
-		name = "course_teacher", 
-		joinColumns = {@JoinColumn(name = "teacher_id")},
-		inverseJoinColumns = {@JoinColumn(name = "course_id")}
-	)
-	private List<Course> course;
+	 @ManyToMany
+	  @JoinTable(name = "course_teacher", joinColumns = {@JoinColumn(name = "teacher_id")},
+	      inverseJoinColumns = {@JoinColumn(name = "course_id")})
+	  private List<Course> courses;
+
+	public List<Course> getCourses() {
+		return courses;
 
 	
 	//GETTER & SETTER
 	
-	public List<Course> getCourse() {
-		return course;
+	
 	}
 
-	public void setCourse(List<Course> course) {
-		this.course = course;
+	public void setCourses(List<Course> courses) {
+		this.courses = courses;
 	}
 
 	public Integer getId() {

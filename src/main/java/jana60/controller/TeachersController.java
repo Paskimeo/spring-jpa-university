@@ -28,12 +28,12 @@ public class TeachersController
 		return "teacher";
 	}
 
-	@GetMapping("/{teacherId}")
+	@GetMapping("/teacher/{teacherId}")
 	public String teachersDetail(Model model,
-			@PathVariable(name = "teacherId") Integer teachersPrimaryKey)
+			@PathVariable(name = "teacherId") Integer teacherPrimaryKey)
 	{
-		Teacher curDep = repo.findById(teachersPrimaryKey).get();
+		Teacher curDep = repo.findById(teacherPrimaryKey).get();
 		model.addAttribute("teacher", curDep);
-		return "teachersDetail";
+		return "teacherDetail";
 	}
 }

@@ -1,9 +1,15 @@
 package jana60.modello;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -25,11 +31,38 @@ public class Course
 	private String cfu;
 	
 	private String website;
+	
+	
+	@ManyToOne
+	  @JoinColumn(name = "degree_id")
+	  private Degree degree;
+	
+	@ManyToMany(mappedBy = "courses")
+	  private List<Teacher> teachers;
+
+	public List<Teacher> getTeachers() {
+		return teachers;
+	}
 		
 	//GETTERS & SETTERS
 
+
+	
+
 	public Integer getId() {
 		return id;
+	}
+
+	public Degree getDegree() {
+		return degree;
+	}
+
+	public void setDegree(Degree degree) {
+		this.degree = degree;
+	}
+
+	public void setTeachers(List<Teacher> teachers) {
+		this.teachers = teachers;
 	}
 
 	public void setId(Integer id) {
