@@ -83,7 +83,7 @@ public class Degree {
 		this.universita = universita;
 	}
 
-	public String getUniversitàName()
+	public String getUniversitaName()
 	{
 		return this.universita.getName();
 	}
