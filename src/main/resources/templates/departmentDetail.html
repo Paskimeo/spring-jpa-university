@@ -1,0 +1,38 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <th:block th:replace="fragments :: risorse-head"></th:block>
+    <title th:text="${department.name}">Department Degrees</title>
+    
+  </head>
+  <body >
+    <div th:replace="fragments :: navbar('department')"></div>
+    <div class="container text-center w-75 mt-3">
+      <h1 th:text="${department.name}"></h1>
+      <hr/>
+      <div th:if="${#lists.isEmpty(department.degrees)}">
+        <h1>Spiacenti, non è disponibile una lista di corsi di Laurea per questo dipartimento</h1>>
+      </div>
+      <div th:unless="${#lists.isEmpty(department.degrees)}">
+        <table class="table mb-5">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Indirizzo</th>
+              <th>Indirizzo mail</th>
+              <th>Sito web</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr th:each="currentDegree : ${department.degrees}">
+              <td th:text="${currentDegree.name}"></td>
+              <td th:text="${currentDegree.address}"></td>
+              <td th:text="${currentDegree.email}"></td>
+              <td th:text="${currentDegree.website}"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </body>
+</html>

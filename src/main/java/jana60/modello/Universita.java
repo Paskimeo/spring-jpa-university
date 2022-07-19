@@ -37,7 +37,7 @@ public class Universita
 	
 	//collegamento tabella uno a molti
 	 @OneToMany
-	 @JoinColumn(name = "Degrees_id")
+	 @JoinColumn(name = "department_id")
 	 private List<Degree> degrees;
 	
 	//Getters and Setters
@@ -106,6 +106,13 @@ public class Universita
 		this.headOfDepartment = headOfDepartment;
 	}
 	
+	public List<Degree> getDegree() {
+		return degrees;
+	}
+
+	public void setDegree(List<Degree> degrees) {
+		this.degrees = degrees;
+	}
 	
 	
 }
