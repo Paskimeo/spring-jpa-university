@@ -28,7 +28,7 @@ public class TeachersController
 		return "teacher";
 	}
 
-	@GetMapping("/teacher/{teacherId}")
+	@GetMapping("/{teacherId}")
 	public String teachersDetail(Model model,
 			@PathVariable(name = "teacherId") Integer teacherPrimaryKey)
 	{

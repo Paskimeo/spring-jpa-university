@@ -1,11 +1,14 @@
 package jana60.modello;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -34,6 +37,26 @@ public class Degree {
 	@ManyToOne
 	  @JoinColumn(name = "department_id")
 	  private Universita universita;
+	
+	@OneToMany
+	 @JoinColumn(name = "degree_id")
+	 private List<Course> courses;
+
+	public List<Course> getCourses() {
+		return courses;
+	}
+
+	public Universita getUniversita() {
+		return universita;
+	}
+
+	public void setUniversita(Universita universita) {
+		this.universita = universita;
+	}
+
+	public void setCourses(List<Course> courses) {
+		this.courses = courses;
+	}
 
 	public Integer getId() {
 		return id;
